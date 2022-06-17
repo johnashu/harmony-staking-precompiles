@@ -12,7 +12,7 @@ const wallet = new Wallet(
   new Messenger(
     new HttpProvider( endpoint ),
     ChainType.Harmony,
-    ChainID.HmyLocal,
+    ChainID.HmyTestnet,
   ),
 );
 const factory = new ContractFactory( wallet );

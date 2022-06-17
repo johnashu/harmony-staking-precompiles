@@ -51,12 +51,13 @@ def setup():
         ( ( time.time() - start_time ) <= timeout ) and
         ( current_epoch < wanted_epoch )
     ):
+        print('Getting Block...')
         try:
             if shard == -1:
                 shard = blockchain.get_shard( endpoint = endpoint )
             current_block_num = blockchain.get_block_number( endpoint )
             if current_block_num > 0:
-                # we are producing blocks, so we will reach wanted_epoch soon
+                # we are producing blocks, so we will reach wanted_epoch soon 
                 start_time = time.time()
             current_epoch = blockchain.get_current_epoch( endpoint )
             print(
